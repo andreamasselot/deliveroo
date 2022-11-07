@@ -27,9 +27,9 @@ function App() {
       <Section name={data.restaurant.name} description={data.restaurant.description} image={data.restaurant.picture}/>
     </div>
     <div>
-      {data.map((elem, index)=> {
+      {data.categories.map((elem, index)=> {
         return (
-          <Categories key={index} title={elem.data.categories[0].name}/>
+          <Categories key={index} title={elem.name}/>
         );
       })};
       

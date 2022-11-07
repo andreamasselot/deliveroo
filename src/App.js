@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import Header from './components/Header';
 import Section from './components/Section';
+import Categories from './components/Categories';
 
 function App() {
   const [data, setData] = useState();
@@ -21,8 +22,18 @@ function App() {
     <p>Loading... </p> 
     ) : (
     <div className="App">
+    <div>
       <Header/>
       <Section name={data.restaurant.name} description={data.restaurant.description} image={data.restaurant.picture}/>
+    </div>
+    <div>
+      {data.map((elem, index)=> {
+        return (
+          <Categories key={index} title={elem.data.categories[0].name}/>
+        );
+      })};
+      
+    </div>
     </div>
   );
 }

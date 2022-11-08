@@ -3,9 +3,14 @@ const Menu = (props) => {
     <div
       className="menu-container"
       onClick={() => {
-        const newTab = [...props.counter];
-        newTab.push({ title: props.title, price: props.price });
-        props.setCounter(newTab);
+        const newTab = [...props.basket];
+        newTab.push({
+          title: props.title,
+          price: props.price,
+          counter: 1,
+          id: props.id,
+        });
+        props.setBasket(newTab);
       }}
     >
       <div className="options">

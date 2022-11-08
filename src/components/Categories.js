@@ -13,6 +13,8 @@ const Categories = (props) => {
               description={elem.description}
               price={elem.price}
               image={elem.picture}
+              counter={props.counter}
+              setCounter={props.setCounter}
             />
           );
         })}

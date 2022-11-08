@@ -59,26 +59,45 @@ h2 {
   border-radius: 10px;
 }
 
-.basket {
+.basket-container {
   background-color: aqua;
+  width: 30%;
+}
+.basket-container h3 {
+  background-color: #bac3c3;
+  color: #8b9a9b;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.basket {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  color: #bac3c3;
+}
+.basket p {
+  margin-bottom: 40px;
 }
 .meals {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  width: 90%;
+  width: 95%;
 }
 .options {
   display: flex;
   flex-direction: column;
 }
 .menu-container {
-  width: 40%;
+  width: 48%;
   color: #868a8a;
   background-color: white;
   border-radius: 10px;
   display: flex;
-  padding: 20px;
+  padding: 15px;
   justify-content: space-between;
 }
 
@@ -90,4 +109,10 @@ p {
   -webkit-box-orient: vertical;
   display: -webkit-box;
   overflow: hidden;
+}
+.left-section {
+  width: 70%;
+}
+.counter {
+  display: flex;
 }

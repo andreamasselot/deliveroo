@@ -5,11 +5,11 @@ import axios from "axios";
 import Header from "./components/Header";
 import Section from "./components/Section";
 import Categories from "./components/Categories";
-import Basket from "./components/Basket";
 
 function App() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [counter, setCounter] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,16 +36,35 @@ function App() {
         />
         <div className="container">
           <div className="body">
-            <div className="basket">
-              <Basket />
+            <div className="basket-container">
+              <div className="basket">
+                <h3>Valider mon panier</h3>
+                <p>Votre panier est vide</p>
+                {counter.map((elem) => {
+                  return (
+                    <>
+                      <div className="counter">
+                        <button>-</button>
+                        <p></p>
+                        <button>+</button>
+                      </div>
+                      <div>{data.categories.name}</div>
+                      <div>{data.categories.price}</div>
+                    </>
+                  );
+                })}
+              </div>
             </div>
-            <div>
+
+            <div className="left-section">
               {data.categories.map((elem, index) => {
                 return (
                   <Categories
                     key={index}
                     title={elem.name}
                     meals={elem.meals}
+                    counter={counter}
+                    setCounter={setCounter}
                   />
                 );
               })}

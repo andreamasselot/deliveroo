@@ -1,6 +1,13 @@
 const Menu = (props) => {
   return (
-    <div className="menu-container">
+    <div
+      className="menu-container"
+      onClick={() => {
+        const newTab = [...props.counter];
+        newTab.push({ title: props.title, price: props.price });
+        props.setCounter(newTab);
+      }}
+    >
       <div className="options">
         <h2 className="food-title">{props.title} </h2>
         <p className="food-caption">{props.description}</p>
